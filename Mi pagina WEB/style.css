@@ -1,0 +1,435 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+header {
+    position: relative;
+    background-color: #4CAF50;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 15%, rgba(0, 0, 0, 0) 16%), 
+                      repeating-linear-gradient(45deg, rgba(216, 12, 12, 0.1) 0, rgba(0, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
+    background-size: 50px 50px, 50px 50px;
+    height: 150px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 2px 0 0;
+}
+
+/* Icono en el header */
+#sensor-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+}
+/* Contenedor de las columnas */
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Estilo de cada columna */
+.column {
+    flex: 1;
+    margin: 0 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+ /* font-size tamaño de la letra margin botor creo que espacio para el texto*/
+.column h2 {
+    font-size: 1.1rem;
+    margin-bottom: 100px;
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+
+.column p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* Botones ovalados */
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.oval-button {
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.button1 {
+    background-color: #FF5722;
+}
+
+.button2 {
+    background-color: #2196F3;
+}
+
+.button3 {
+    background-color: #4CAF50;
+}
+
+.oval-button:hover {
+    transform: scale(1.1);
+}
+
+/* Carrusel de imágenes */
+.carousel-container {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    overflow: hidden;
+    width: 100%; /* Asegura que el carrusel ocupe todo el ancho disponible */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+}
+
+.carousel-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Botones de navegación */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    z-index: 10; /* Asegura que el botón esté por encima del carrusel */
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Asegurarte de que el contenedor sea interactivo */
+.carousel-container {
+    cursor: grab; /* Cursor que indica que puedes arrastrar */
+}
+
+.carousel-container.dragging {
+    cursor: grabbing; /* Cursor cuando estás arrastrando */
+}
+
+/* Estilos de las imágenes */
+.carousel img {
+    max-width: 100%;
+    width: auto;
+    height: 300px; /* Ajusta la altura de las imágenes */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+    transform: scale(1.05); /* Efecto de aumento cuando el cursor pasa sobre la imagen */
+}
+/* Imagen final flotante y transparente */
+.final-image-container {
+    position: fixed; /* Para que flote en un lugar fijo de la página */
+    bottom: 20px;
+    right: 20px; /* Ajusta la posición */
+    z-index: 10;
+}
+
+.final-image {
+    width: 80px; /* Tamaño pequeño */
+    height: auto;
+    opacity: 0.8; /* Medio transparente */
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+
+.final-image:hover {
+    transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+    opacity: 1; /* Más visible al pasar el cursor */
+}
+
+/* Contenedor del mensaje emergente */
+.thanks-message-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo traslúcido */
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+}
+
+.thanks-message-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo claro traslúcido */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 300
+}
+/* Estilo del botón para el enlace */
+.gear .button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    text-decoration: none; /* Quitar subrayado */
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.gear .button:hover {
+    background-color: #45a049; /* Color cuando el botón es presionado */
+}
+
+/* imagenes dentro de las columnas analizar luego el codigo*/
+/* Estilos para las columnas */
+/* Estilos para las columnas */
+.columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Espacio entre columnas */
+  }
+  
+  /* Cada columna individual */
+  .column {
+    flex: 1; /* Ajusta para que todas las columnas sean del mismo tamaño */
+    text-align: center; /* Centra el contenido de cada columna */
+    border: 1px solid #ddd; /* Borde general para la columna (opcional) */
+    padding: 10px;
+    border-radius: 5px; /* Bordes redondeados (opcional) */
+    background-color: #f9f9f9; /* Fondo para resaltar las columnas (opcional) */
+  }
+  
+  /* Estilos para las imágenes */
+  .column-image {
+    width: 100%; /* Ocupa todo el ancho de la columna */
+    height: auto; /* Mantén la proporción de la imagen */
+    border: 2px solid #444; /* Borde alrededor de la imagen */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+  }
+  /* SI NO SIRVE SE BORRA, IMAGEN DEBAJO DEL TEXTO EN LAS COLUMNAS*/
+  .formula-image {
+    width: 200px;  /* Ajusta el tamaño a 100px de ancho (puedes cambiar el valor) */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    opacity: 0.7;  /* Hace que la imagen sea un poco transparente (puedes ajustar el valor) */
+    display: block;  /* Asegura que la imagen se muestre como bloque (en una nueva línea debajo del texto) */
+    margin-top: 10px;  /* Da un pequeño espacio arriba de la imagen */
+    margin-bottom: 10px;  /* Da un pequeño espacio abajo de la imagen */
+    margin-left: auto; /* Centra la imagen en su contenedor */
+    margin-right: auto; /* Centra la imagen en su contenedor */
+  }
+  /* Estilos para las ventanas emergentes */
+.modal {
+    display: none; /* Ocultas por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Aquí está el código actualizado para incluir una barra de desplazamiento dentro de los modales:*/
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    max-height: 80vh; /* Limita la altura para evitar que ocupe toda la pantalla */
+    overflow-y: auto; /* Habilita la barra de desplazamiento vertical */
+}
+
+/* Personalización de la barra de desplazamiento */
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del scroll */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color al pasar el cursor */
+}
+
+  /* acacacacacacacca tamaño de las fotos del carrucel*/
+  /* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    position: relative;
+    width: 80%; /* Ajusta el ancho del carrusel */
+    margin: 50px auto;
+    overflow: hidden;
+    opacity: 0.8; /* Hace que el carrusel sea semi-translúcido */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 500px; /* Ajusta el tamaño máximo de las imágenes */
+    margin: 0 10px;
+    object-fit: cover;
+}
+
+/* Botones del carrusel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilos para las imágenes del carrusel */
+.carousel img {
+    max-width: 100%;
+    width: auto;
+    height: 300px; /* Ajusta la altura de las imágenes */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+    transform: scale(1.05); /* Hace que las imágenes crezcan un poco al pasar el ratón */
+}
+ /*posible borrar*/
+ /* El mensaje emergente debe estar oculto inicialmente */
+.thanks-message-overlay {
+    display: none; /* Asegúrate de que esté oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    z-index: 1000;
+    text-align: center;
+    padding-top: 150px; /* Asegúrate de que se vea centrado */
+}
+
+.thanks-message-overlay div {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 80%;
+    max-width: 500px;
+}
+
+  

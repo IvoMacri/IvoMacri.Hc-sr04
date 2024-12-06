@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La tierra no da frutos, si no la riega el sudor: Ivo Macri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Sensor Ultrasonico HC -SR04</h1>
+        <p>Aprende las Características, funciones y su programación, 
+            <a href="#botones" style="color: blue; text-decoration: underline;">AQUÍ</a>.
+        </p>
+        <img id="sensor-icon" src="mimo.jpg" alt="Icono transparente">
+        <section class="gear">
+            <!-- Enlace al modelo 3D del sensor HC-SR04 -->
+            <a href="https://grabcad.com/library/ultrasonic-sensor-hc-sr04-3" target="_blank">
+                <button class="button">Ver Modelo 3D del HC-SR04</button>
+            </a>
+        </section>
+    </header>
+    
+
+<!-- Contenedor de las columnas -->
+<div class="columns">
+    <div class="column">
+      <img src="sensor echo.jpg" alt="Descripción Imagen 1" class="column-image">
+      <p>En el HC-SR04, el emisor (TRIGGER) emitirá ultrasonidos y cuando reboten en un objeto u obstáculo que se encuentre en el camino serán captados por el receptor (ECHO). El circuito se encargará de hacer los cálculos necesarios de ese eco para determinar la distancia. Esto también te puede ser familiar si conoces el sistema que usan algunos animales como los delfines, ballenas o murciélagos para localizar obstáculos, presas, etc.</p>
+      <img src="Formula 1.jpg" alt="Fórmula del HC-SR04" class="formula-image">
+    </div>
+    <div class="column">
+      <img src="pin out.webp" alt="Descripción Imagen 2" class="column-image">
+      <p>El sensor HC-SR04 tiene cuatro pines: VCC (alimentación positiva, 5V), Trigger (pin de disparo que emite un pulso ultrasónico para iniciar la medición), Echo (pin de recepción que detecta el eco de la señal y permite calcular la distancia), y GND (tierra). La distancia se calcula midiendo el tiempo de vuelo del pulso ultrasónico reflejado.</p>
+    
+    </div>
+
+    <div class="column">
+      <img src="GPO.webp" alt="Descripción Imagen 3" class="column-image">
+      <p>El "pin VCC" del HC-SR04 se conecta a 5V del ESP32 y el "Pin GND" a GND del ESP32 para alimentar el sensor. El "Pin Trig" se conecta a un pin GPIO del ESP32 configurado como salida (Output), y el "Pin Echo" se conecta a otro pin GPIO configurado como entrada (Input). El "Pin Trig" emite un pulso para activar el sensor, mientras que el pin Echo recibe el pulso reflejado, que se usa para calcular la distancia. Es importante usar un divisor de tensión entre el pin Echo y el GPIO del ESP32, ya que Echo emite 5V y el ESP32 usa 3.3V.</p>
+    </div>
+  </div>
+  
+    <div class="button-container">
+        <!-- Botones -->
+        <section id="botones">
+            <button class="oval-button button1" onclick="openModal('modal1')">Desarrollo del código en ARDUINO IDE</button>
+            <button class="oval-button button2" onclick="openModal('modal2')">Mercado</button>
+            <button class="oval-button button3" onclick="openModal('modal3')">Material de Trabajo</button>
+        </section>
+    </div>
+    <!-- Ventanas emergentes -->
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Código en Arduino IDE</h2>
+        <p>En esta sección se explica cómo programar el sensor HC-SR04 en Arduino IDE. El código incluye el manejo de los pines Trigger y Echo, la conversión del tiempo en distancia y la salida de datos en el monitor serial.</p>
+        <a href="https://www.hwlibre.com/hc-sr04/" target="_blank">Leer más sobre Arduino IDE</a>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Precios del Mercado</h2>
+        <p>Este apartado es para analizar y buscar el mejor precio para el sensor HC-SR04, en MercadoLibre.</p>
+        <a href="https://listado.mercadolibre.com.ar/sensor-ultrasonico-hc-sr04" target="_blank">Más detalles sobre el HC-SR04</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Libro-Teoria</h2>
+        <p>Se detalla cómo conectar el sensor HC-SR04 a un ESP32, incluyendo la importancia del divisor de tensión para proteger los pines GPIO.</p>
+        <a href="https://www.bolanosdj.com.ar/MOVIL/ARDUINO2/Ultrasonido1.pdf" target="_blank">Ver más sobre ESP32</a>
+    </div>
+</div>
+
+
+<div 
+
+class="carousel">
+    <img src="cesto.webp" alt="Cesto inteligente" data-video="https://www.youtube.com/watch?v=3JJziEG_6Dw">
+    <img src="auto con sensor.jpg" alt="auto esquiva obstaculos" data-video="https://www.youtube.com/watch?v=1gCbtCZkIQ4&list=PLjdzqNYHzVepGO4cY3na7aAdqK0UD1WXj">
+    <img src="D1.jpg" alt="medidor de distancia" data-video="https://www.youtube.com/watch?v=_RpSaj9j-GY">
+    <img src="peaje.jpg" alt="Imagen 4" data-video="https://robotsarduinomarian.blogspot.com/2023/11/barrera-con-arduino.html">
+    <img src="radar.avif" alt="Imagen 5" data-video="https://www.bing.com/videos/riverview/relatedvideo?&q=radar+con+sensor+hc-sr04&&mid=7933FBE5C6A0F8DEFD397933FBE5C6A0F8DEFD39&mmscn=mtsc&aps=433&mcid=EE60B30658144396AAAA3687AFB47F0C&FORM=VRDGAR">
+  </div>
+  
+  <button id="prevBtn">Anterior</button>
+  <button id="nextBtn">Siguiente</button>
+  
+    
+    </div>
+
+    <!-- Contenedor para la imagen que activará el mensaje emergente -->
+<div class="final-image-container">
+    <img class="final-image" src="mimo.jpg" alt="Gracias" onclick="showThanksMessage()">
+</div>
+
+<!-- Contenedor para el mensaje emergente -->
+<div id="thanks-message" class="thanks-message-overlay" onclick="hideThanksMessage()">
+    <div>
+        <p>Gracias por ver la introducción al sensor HC-SR04</p>
+        <hr> 
+        <p> ATT: Estudiante Ivo Macri</p>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
