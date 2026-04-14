@@ -15,6 +15,8 @@
     --color-text-light: #555;
     --color-bg-column: #f9f9f9;
     --color-border: #ddd;
+    --color-border-dark: #444;
+    --color-link: blue;
     --font-main: Arial, sans-serif;
     --font-heading: 'Oswald', sans-serif;
 }
@@ -52,7 +54,7 @@ header p {
 }
 
 .header-link {
-    color: blue;
+    color: var(--color-link);
     text-decoration: underline;
 }
 
@@ -127,7 +129,7 @@ main {
 .column-image {
     width: 100%;
     height: auto;
-    border: 2px solid #444;
+    border: 2px solid var(--color-border-dark);
     border-radius: 5px;
     margin-bottom: 10px;
 }
